@@ -1,0 +1,31 @@
+{
+  "name": "acumatica-browser-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "package": "npm run build && node tools/package.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:browser": "npm run build && playwright test",
+    "lint:firefox": "npx web-ext lint --source-dir dist/firefox",
+    "check": "npm run typecheck && npm test && npm run package && npm run test:browser && npm run lint:firefox"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/chrome": "0.1.1",
+    "@types/node": "24.3.1",
+    "esbuild": "0.25.9",
+    "fflate": "0.8.3",
+    "jsdom": "26.1.0",
+    "pngjs": "7.0.0",
+    "typescript": "5.9.2",
+    "vitest": "4.1.11",
+    "web-ext": "10.7.0"
+  }
+}

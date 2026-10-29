@@ -1,0 +1,7 @@
+node_modules/
+dist/
+releases/
+playwright-report/
+test-results/
+store-assets/
+*.log

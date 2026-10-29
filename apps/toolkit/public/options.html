@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Power Tools options</title><link rel="stylesheet" href="options.css"></head><body><div class="shell">
+<aside class="sidebar">
+<div class="brand"><img src="icons/icon128.png" alt="" width="56" height="56"><div><span class="kicker">Acumatica</span><span class="product">Power Tools</span><span class="by">by Acugen Consulting</span></div></div>
+<nav class="index" aria-label="Sections"><a href="#copy-for-ai"><span>01</span>Copy for AI</a><a href="#preferences"><span>02</span>Preferences</a><a href="#about"><span>03</span>About &amp; privacy</a><a href="#tools"><span>04</span>Other free tools</a></nav>
+<div class="sidebar-foot"><fieldset class="seg" id="theme"><legend>Appearance</legend><label><input type="radio" name="theme" value="system" checked>System</label><label><input type="radio" name="theme" value="light">Light</label><label><input type="radio" name="theme" value="dark">Dark</label></fieldset><p class="muted">Version <span id="version"></span></p></div>
+</aside>
+<main><header class="page-head"><h1>Options</h1><p class="muted">Settings are stored in this browser's local extension storage.</p></header>
+<form id="settings">
+<section class="ledger" id="copy-for-ai"><div class="ledger-head"><span class="num">01</span><h2>Copy for AI</h2><p>Copy for AI fills placeholders locally and adds the technical context to your clipboard. No AI service is contacted.</p></div><div class="ledger-body">
+<label class="field"><span class="label">Prompt preset</span><select id="preset"></select></label>
+<div class="field"><div class="field-head"><label class="label" for="prompt">Your prompt</label><button id="reset" class="ghost" type="button">Restore default prompt</button></div><textarea id="prompt" required></textarea></div>
+<div class="chips" id="placeholders"><span class="muted">Insert placeholder</span><button type="button" data-placeholder="screenId">{screenId}</button><button type="button" data-placeholder="screenName">{screenName}</button><button type="button" data-placeholder="ui">{ui}</button><button type="button" data-placeholder="environment">{environment}</button><button type="button" data-placeholder="url">{url}</button></div>
+<figure class="preview"><figcaption><span>Clipboard preview</span><span class="muted">Sample values · SO301000</span></figcaption><div id="prompt-preview"></div><pre id="context-preview">Acumatica field context
+Screen: Sales Orders
+Screen ID: SO301000
+Field: CustomerID
+View: Document
+DAC: PX.Objects.SO.SOOrder</pre></figure>
+</div></section>
+<section class="ledger" id="preferences"><div class="ledger-head"><span class="num">02</span><h2>Preferences</h2></div><div class="ledger-body settings-list">
+<label class="setting"><span class="setting-text"><span class="setting-title">Classic native resolver <span class="tag">Experimental</span></span><span class="setting-desc">Off by default. When enabled, the Inspect tab offers an explicit button to run Acumatica's native metadata callback and same-origin field-help request. Responses remain in memory.</span></span><input id="experimental" class="switch" type="checkbox"></label>
+</div></section>
+<section class="ledger" id="about"><div class="ledger-head"><span class="num">03</span><h2>About &amp; privacy</h2></div><div class="ledger-body">
+<ul class="trust"><li>Local processing</li><li>No telemetry</li><li>No credentials</li><li>No external backend</li></ul>
+<p class="muted">Unofficial, not affiliated with Acumatica, Inc.</p>
+</div></section>
+<section class="ledger" id="tools"><div class="ledger-head"><span class="num">04</span><h2>Other free tools</h2></div><div class="ledger-body tools">
+<div class="tool"><a id="trace-tool" class="tool-card" target="_blank" rel="noopener noreferrer"><img src="images/trace-copier.png" alt="" width="40" height="40"><span><strong>Acumatica Trace Copier</strong><small class="store">Chrome Web Store</small></span></a><p class="also" data-tool="trace"></p></div>
+<div class="tool"><a id="audit-tool" class="tool-card" target="_blank" rel="noopener noreferrer"><img src="images/audit-trail-analyzer.png" alt="" width="40" height="40"><span><strong>Acumatica Audit Trail Analyzer</strong><small class="store">Chrome Web Store</small></span></a><p class="also" data-tool="audit"></p></div>
+<div class="tool"><a id="website" class="tool-card" target="_blank" rel="noopener noreferrer"><span><small>Website</small><strong>acugenconsulting.com</strong></span></a></div>
+</div></section>
+<div class="savebar"><span class="dirty" id="dirty" hidden>Unsaved changes</span><p id="status" role="status"></p><button id="save" class="primary" type="submit">Save settings</button></div>
+</form></main></div><script src="options.js"></script></body></html>
